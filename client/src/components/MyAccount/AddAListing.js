@@ -28,7 +28,6 @@ function AddAListing() {
   const [img, setImg] = useState("")
   const [preference, setPreference] = useState("")
 
-  // toast.success("Offer placed successfully!")
 
   //send data to api
   const uploadListing = function (e) {
