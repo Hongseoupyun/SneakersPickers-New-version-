@@ -15,7 +15,7 @@ module.exports = db => {
     .then(result => {
       console.log("result makeoffer:", result)
       rows = result.rows;
-      res.json({"Offering id:": offeredID});
+      res.json({"Offering id:": req.body.offeredID});
     })
     .catch(err => {
       console.log("error in make offer:", err)

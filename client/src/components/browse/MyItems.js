@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Placeoffer.scss";
@@ -7,8 +5,6 @@ import { BsFillBookmarkHeartFill } from "react-icons/bs";
 import { MdDescription } from "react-icons/md";
 import { GiBarefoot } from "react-icons/gi";
 import classNames from "classnames";
-
-
 
 function MyItems(props) {
 
@@ -19,7 +15,7 @@ function MyItems(props) {
 
   console.log("thisis props id", props.id)
 
-  const handleClass = classNames("my-shoes-card", {"shoes-selected ":props.offeredID === props.id })
+  const handleClass = classNames("my-shoes-card", { "shoes-selected ": props.offeredID === props.id })
 
   return (
     <div className={handleClass} onClick={handleClick} value={props.id}>
@@ -29,13 +25,13 @@ function MyItems(props) {
           {props.name}
         </div>
         <div className="my-shoes-pref">
-          <BsFillBookmarkHeartFill/> {props.preference}
+          <BsFillBookmarkHeartFill /> {props.preference}
         </div>
         <div className="my-shoes-desc">
-          <MdDescription/> {props.description}
+          <MdDescription /> {props.description}
         </div>
         <div className="my-shoes-size">
-          <GiBarefoot/>{props.brand}/Size: {props.size}
+          <GiBarefoot />{props.brand}/Size: {props.size}
         </div>
       </div>
     </div>
