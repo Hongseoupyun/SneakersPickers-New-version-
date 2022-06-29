@@ -15,7 +15,6 @@ export default function ListingItem(props) {
 
 
   return (
-
     <section className="browse-container">
       <img className="mylisting-img" src={picture} />
       <div className="mylisting-card-contents">
