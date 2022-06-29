@@ -2,18 +2,15 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Placeoffer.scss";
 import axios from "axios";
-import { useNavigate, useParams, useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import MyItems from "./MyItems";
-import {ToastContainer, toast, Zoom, Bounce} from "react-toastify"
+import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import { BsFillBookmarkHeartFill } from "react-icons/bs";
 import { MdDescription } from "react-icons/md";
 import { GiBarefoot } from "react-icons/gi";
 import tradeImg from "../images/trade.png";
 function Placeoffer() {
-  //**************** */
-  // const location = useLocation();
-
 
 
   const { id } = useParams();
@@ -65,17 +62,17 @@ function Placeoffer() {
       position: toast.POSITION.TOP_CENTER
     });
   };
-  
+
   useEffect(() => {
     loadMyListings()
     loadListing()
   }, [])
-  
+
 
 
   //sends axios post request using id from param, and offeredID from selected on myListed component
   const handleOffer = () => {
-    return(axios.post('/api/makeoffer', {listingID: Number(id), offeredID: offeredID})
+    return (axios.post('/api/makeoffer', { listingID: Number(id), offeredID: offeredID })
       .then((result) => {
         successToast()
       })
@@ -87,32 +84,32 @@ function Placeoffer() {
       })
     )
   }
-  
+
 
   return (
     <div className="placeoffer-body">
       {listing && myListings ? (
         <>
           <article className="placeoffers-cards">
-            <ToastContainer 
-            autoClose={1300}
+            <ToastContainer
+              autoClose={1300}
             />
             <div className="placeoffer-other-card">
-                <img
-                  className="placeoffer-img"
-                  src={listing.image_url}
-                />
+              <img
+                className="placeoffer-img"
+                src={listing.image_url}
+              />
               <div className="placeoffer-name">{listing.name}</div>
               <div className="placeoffer-texts">
                 <div className="placeoffer-pref">
-                  <BsFillBookmarkHeartFill /> 
+                  <BsFillBookmarkHeartFill />
                   <span>Preference: {listing.preference}</span>
                 </div>
                 <div className="placeoffer-desc">
-                  <MdDescription /> 
+                  <MdDescription />
                   <span>{listing.description}</span>
                 </div>
-                <div className="placeoffer-brand-size"><GiBarefoot/> {listing.brand}/Size: {listing.size}</div>
+                <div className="placeoffer-brand-size"><GiBarefoot /> {listing.brand}/Size: {listing.size}</div>
               </div>
             </div>
 

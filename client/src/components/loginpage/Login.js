@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Login.scss";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import {ToastContainer, toast, Zoom, Bounce} from "react-toastify"
+import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
 function Login() {
@@ -12,7 +11,6 @@ function Login() {
   const [password, setPassword] = useState('');
   const [loginError, setLoginError] = useState(false);
 
-  const navigate = useNavigate();
 
   const successToast = () => {
     toast("Logged in successfully!", {
@@ -28,7 +26,7 @@ function Login() {
     e.preventDefault()
     console.log("submit fire")
     return (axios.post('/auth/login', { email: email, password: password })
-      .then((result) => {
+      .then(() => {
         successToast()
         setLoginError(false)
         localStorage.setItem('isLoggedIn', true);
@@ -36,7 +34,7 @@ function Login() {
       .then(() => {
         setTimeout(() => window.open('/', "_self"), 1500)
       })
-      .catch((error) => {
+      .catch(() => {
         setLoginError(true)
       })
     )
@@ -44,9 +42,9 @@ function Login() {
 
   return (
     <div className="login-body">
-        <ToastContainer 
+      <ToastContainer
         autoClose={1500}
-        />
+      />
       <section className="login-form">
         <h1 className="login-heading">Sign in</h1>
         <form method="POST" onSubmit={logUser}>
@@ -62,7 +60,7 @@ function Login() {
             <div className="caption-err">
               Incorrect Email or password. Please try again.
             </div>)
-            }
+          }
           <div className="btn-area">
             <button type="submit">Sign in</button>
           </div>
