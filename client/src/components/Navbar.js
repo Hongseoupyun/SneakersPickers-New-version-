@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { Navbar, Nav, NavDropdown } from "react-bootstrap"
 import './Navbar.css'
 import axios from "axios";
-import bellicon from "./images/bellicon.png"
 import { MdNotificationsActive } from "react-icons/md";
 
 
