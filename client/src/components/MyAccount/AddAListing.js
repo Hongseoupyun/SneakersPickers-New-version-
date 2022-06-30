@@ -4,9 +4,8 @@ import addSneakers from "../images/sneakers2.jpeg"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"
 import axios from "axios";
-import {ToastContainer, toast, Zoom, Bounce} from "react-toastify"
+import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
-import { Toast } from "react-bootstrap";
 
 function AddAListing() {
 
@@ -32,21 +31,21 @@ function AddAListing() {
   //send data to api
   const uploadListing = function (e) {
     e.preventDefault();
-    axios.post("api/listings",{name, size, brand, description, img, preference})
-    .then(() => {
-      successToast();
-    })
-    .then(() => {
-      setTimeout( () => navigate('/browse'), 1500)
-    })
-    .catch((err)=>{
-      console.log("Error occured in ",err)
-    })
+    axios.post("api/listings", { name, size, brand, description, img, preference })
+      .then(() => {
+        successToast();
+      })
+      .then(() => {
+        setTimeout(() => navigate('/browse'), 1500)
+      })
+      .catch((err) => {
+        console.log("Error occured in ", err)
+      })
   }
 
   const handleChange = (e) => {
     console.log("handleChange e  => ", e.target.value, typeof e.target.value)
-    console.log("name=",e.target.name)
+    console.log("name=", e.target.name)
     const val = Number(e.target.value);
     setSize(val)
   }
@@ -61,14 +60,11 @@ function AddAListing() {
     });
   };
 
-  
-
-
   return (
     <div className="add-body">
       <div className="master-container">
-        <ToastContainer 
-        autoClose={1500}
+        <ToastContainer
+          autoClose={1500}
         />
         <div>
           <img className="add-a-listing-img" name src={addSneakers} />
@@ -80,7 +76,7 @@ function AddAListing() {
               type="text"
               name="shoes-name"
               value={name}
-              onChange={(e)=>{setName(e.target.value)}}
+              onChange={(e) => { setName(e.target.value) }}
               autoComplete="off"
               required
             />
@@ -101,7 +97,7 @@ function AddAListing() {
               </select>
             </div>
             <div>
-              <select name="brand" className="brand" onChange={(e)=>{setBrand(e.target.value)}}>
+              <select name="brand" className="brand" onChange={(e) => { setBrand(e.target.value) }}>
                 <option value="Air Jordan">Air Jordan</option>
                 <option value="Nike Dunks">Nike Dunks</option>
                 <option value="Nike Air Force">Nike Air Force 1</option>
@@ -117,7 +113,7 @@ function AddAListing() {
               type="text"
               name="description"
               value={description}
-              onChange={(e)=>{setDescription(e.target.value)}}
+              onChange={(e) => { setDescription(e.target.value) }}
               autoComplete="off"
               required
             />
@@ -128,7 +124,7 @@ function AddAListing() {
               type="text"
               name="img-url"
               value={img}
-              onChange={(e)=>{setImg(e.target.value)}}
+              onChange={(e) => { setImg(e.target.value) }}
               autoComplete="off"
               required
             />
@@ -139,17 +135,17 @@ function AddAListing() {
               type="text"
               name="pref"
               value={preference}
-              onChange={(e)=>{setPreference(e.target.value)}}
+              onChange={(e) => { setPreference(e.target.value) }}
               autoComplete="off"
               required
             />
             <label>Preference(eg.Nike Dunks Varisty red etc.)</label>
           </div>
           <div className="btn-area">
-            <button type="submit" onClick={(e)=>{uploadListing(e)}}>Publish</button>
+            <button type="submit" onClick={(e) => { uploadListing(e) }}>Publish</button>
           </div>
         </form>
-        </div>
+      </div>
     </div>
   );
 }
