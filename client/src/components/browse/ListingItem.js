@@ -6,11 +6,11 @@ import { useNavigate } from "react-router-dom";
 
 export default function ListingItem(props) {
   const navigate = useNavigate();
+  const { name, size, brand, description, preference, id, picture } = props;
+  const LoggedIn = localStorage.getItem("isLoggedIn");
   const handleClick = () => {
     LoggedIn === "true" ? navigate(`/placeoffer/${id}`) : navigate("/login");
   };
-  const { name, size, brand, description, preference, id, picture } = props;
-  const LoggedIn = localStorage.getItem("isLoggedIn");
   return (
     <section className="browse-container">
       <img className="mylisting-img" src={picture} />
