@@ -6,6 +6,7 @@ const logger = require("morgan");
 const passport = require("passport");
 const session = require("express-session");
 const bodyParser = require("body-parser");
+const local = require("./strategies/local");
 // const PORT = 3000;
 
 

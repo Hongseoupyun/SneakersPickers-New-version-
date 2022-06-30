@@ -33,15 +33,6 @@ const declineOffer= `
 UPDATE offers SET pending = FALSE where offers.offerid = $1
 `;
 
-// const declineOffer = `
-// UPDATE courses
-// SET published_date = '2020-07-01'
-// WHERE course_id = 2
-// RETURNING *;
-// `;
-
-
-
 module.exports = (db) => {
 
   router.get("/offerlist", (req, res) => {
