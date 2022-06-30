@@ -1,22 +1,17 @@
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 
 function Logout() {
 
   function logout() {
-    localStorage.setItem('isLoggedIn', false);
-    window.open('/', "_self")
-
+    localStorage.setItem("isLoggedIn", false);
+    window.open("/", "_self");
   }
 
   useEffect(() => {
-    logout()
+    logout();
   });
 
-  return (
-    <div className="container">
-      Signing out!
-    </div>
-  )
+  return <div className="container">Signing out!</div>;
 }
 
 export default Logout;

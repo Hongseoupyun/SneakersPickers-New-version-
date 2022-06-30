@@ -4,7 +4,6 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const passport = require("passport");
-const local = require("./strategies/local");
 const session = require("express-session");
 const bodyParser = require("body-parser");
 // const PORT = 3000;
@@ -63,6 +62,3 @@ app.use("/api", historyRouter(db))
 
 module.exports = app;
 
-// app.listen(PORT, () => {
-//   console.log(`Example app listening on port ${PORT}!`);
-// });
