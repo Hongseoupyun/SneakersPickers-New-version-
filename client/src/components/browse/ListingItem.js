@@ -7,7 +7,6 @@ export default function ListingItem(props) {
 
   const { name, size, brand, description, preference, id, picture } = props
   const LoggedIn = localStorage.getItem('isLoggedIn');
-
   return (
     <section className="browse-container">
       <img className="mylisting-img" src={picture} />
@@ -26,7 +25,7 @@ export default function ListingItem(props) {
           <MdDescription /><span>{description}</span>
         </div>
         <div className="make-offers">
-          <a className="make-offer-button-href" href={LoggedIn === "true" ? `/placeoffer/${id}` : "/login"}> <button type="submit">Make a Offer</button></a>
+           <a className="make-offer-button-href" href={LoggedIn === "true" ? `/placeoffer/${id}`:"/login"}> <button type="submit">Make a Offer</button></a>
         </div>
       </div>
     </section>
