@@ -8,15 +8,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function AddAListing() {
-  // const [state, setState] = useState({
-  //   name,
-  //   size :4
-  //   brand :"Air Jordan"
-  //   description,
-  //   img,
-  //   preference
-  // })
-
   const navigate = useNavigate();
 
   const [name, setName] = useState("");
@@ -40,13 +31,6 @@ function AddAListing() {
       .catch((err) => {
         console.log("Error occured in ", err);
       });
-  };
-
-  const handleChange = (e) => {
-    console.log("handleChange e  => ", e.target.value, typeof e.target.value);
-    console.log("name=", e.target.name);
-    const val = Number(e.target.value);
-    setSize(val);
   };
 
   const successToast = () => {
@@ -81,7 +65,7 @@ function AddAListing() {
           </div>
           <div className="size-brand">
             <div>
-              <select name="size" className="size" onChange={handleChange}>
+              <select name="size" className="size" onChange={(e)=>setSize(e.target.value)}>
                 <option value="4">Size 4</option>
                 <option value="5">Size 5</option>
                 <option value="6">Size 6</option>

@@ -5,11 +5,6 @@ INSERT INTO users (user_name, email, password)
 VALUES ($1, $2, $3);
 `;
 
-// INSERT INTO users (name, email, password)
-// VALUES
-//   ('test', 'test@test.com', 'test'),
-
-
 // Route /register
 module.exports = db => {
   router.post("/", (req, res) => {
