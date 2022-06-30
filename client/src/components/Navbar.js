@@ -18,6 +18,9 @@ function NavBar() {
   const getUsersProfile = function () {
     return axios.get("api/profile").then((result) => {
       setName(result.data.user_name);
+    })
+    .catch((err) => {
+      console.log("Error Occured =>", err);
     });
   };
 
@@ -33,7 +36,7 @@ function NavBar() {
         }
       })
       .catch((err) => {
-        console.log("Error Occured in", err);
+        console.log("Error Occured =>", err);
       });
   };
 
@@ -42,8 +45,8 @@ function NavBar() {
     getUsersProfile();
     loadMyListings();
   }, []);
+  console.log("userloggedin =>",name);
 
-  console.log(name);
 
   return (
     <Navbar
@@ -54,7 +57,7 @@ function NavBar() {
     >
       <Navbar.Brand className="logoname" href="/">
         SNEAKERSPICKERS
-        {LoggedIn !== "false" && (
+        {LoggedIn === "true" && (
           <div className="username">Welcome, {name}</div>
         )}
         {LoggedIn === "false" && <div className="username">Welcome, Guest</div>}

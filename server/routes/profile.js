@@ -8,7 +8,6 @@ WHERE id = $4;`
 module.exports = (db) => {
 
   router.get("/profile", (req, res) => {
-    // console.log("User logging in:", req.user.id)
       db.query(queryUser, [req.user.id])
         .then((result) => {
           res.json(result.rows[0]);
