@@ -1,14 +1,13 @@
 import React from "react";
 import "./AddAListing.scss";
-import addSneakers from "../images/sneakers2.jpeg"
+import addSneakers from "../images/sneakers2.jpeg";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify"
-import "react-toastify/dist/ReactToastify.css"
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function AddAListing() {
-
   // const [state, setState] = useState({
   //   name,
   //   size :4
@@ -20,52 +19,48 @@ function AddAListing() {
 
   const navigate = useNavigate();
 
-  const [name, setName] = useState("")
-  const [size, setSize] = useState("")
-  const [brand, setBrand] = useState("")
-  const [description, setDescription] = useState("")
-  const [img, setImg] = useState("")
-  const [preference, setPreference] = useState("")
-
+  const [name, setName] = useState("");
+  const [size, setSize] = useState("");
+  const [brand, setBrand] = useState("");
+  const [description, setDescription] = useState("");
+  const [img, setImg] = useState("");
+  const [preference, setPreference] = useState("");
 
   //send data to api
   const uploadListing = function (e) {
     e.preventDefault();
-    axios.post("api/listings", { name, size, brand, description, img, preference })
+    axios
+      .post("api/listings", { name, size, brand, description, img, preference })
       .then(() => {
         successToast();
       })
       .then(() => {
-        setTimeout(() => navigate('/browse'), 1500)
+        setTimeout(() => navigate("/browse"), 1500);
       })
       .catch((err) => {
-        console.log("Error occured in ", err)
-      })
-  }
+        console.log("Error occured in ", err);
+      });
+  };
 
   const handleChange = (e) => {
-    console.log("handleChange e  => ", e.target.value, typeof e.target.value)
-    console.log("name=", e.target.name)
+    console.log("handleChange e  => ", e.target.value, typeof e.target.value);
+    console.log("name=", e.target.name);
     const val = Number(e.target.value);
-    setSize(val)
-  }
-
-
+    setSize(val);
+  };
 
   const successToast = () => {
     toast("Listing added successfully!", {
       className: "custom-toast",
       draggable: true,
-      position: toast.POSITION.TOP_CENTER
+      position: toast.POSITION.TOP_CENTER,
     });
   };
 
   return (
     <div className="add-body">
       <div className="master-container">
-        <ToastContainer
-          autoClose={1500}
-        />
+        <ToastContainer autoClose={1500} />
         <div>
           <img className="add-a-listing-img" name src={addSneakers} />
         </div>
@@ -76,7 +71,9 @@ function AddAListing() {
               type="text"
               name="shoes-name"
               value={name}
-              onChange={(e) => { setName(e.target.value) }}
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
               autoComplete="off"
               required
             />
@@ -97,7 +94,13 @@ function AddAListing() {
               </select>
             </div>
             <div>
-              <select name="brand" className="brand" onChange={(e) => { setBrand(e.target.value) }}>
+              <select
+                name="brand"
+                className="brand"
+                onChange={(e) => {
+                  setBrand(e.target.value);
+                }}
+              >
                 <option value="Air Jordan">Air Jordan</option>
                 <option value="Nike Dunks">Nike Dunks</option>
                 <option value="Nike Air Force">Nike Air Force 1</option>
@@ -113,7 +116,9 @@ function AddAListing() {
               type="text"
               name="description"
               value={description}
-              onChange={(e) => { setDescription(e.target.value) }}
+              onChange={(e) => {
+                setDescription(e.target.value);
+              }}
               autoComplete="off"
               required
             />
@@ -124,7 +129,9 @@ function AddAListing() {
               type="text"
               name="img-url"
               value={img}
-              onChange={(e) => { setImg(e.target.value) }}
+              onChange={(e) => {
+                setImg(e.target.value);
+              }}
               autoComplete="off"
               required
             />
@@ -135,14 +142,23 @@ function AddAListing() {
               type="text"
               name="pref"
               value={preference}
-              onChange={(e) => { setPreference(e.target.value) }}
+              onChange={(e) => {
+                setPreference(e.target.value);
+              }}
               autoComplete="off"
               required
             />
             <label>Preference(eg.Nike Dunks Varisty red etc.)</label>
           </div>
           <div className="btn-area">
-            <button type="submit" onClick={(e) => { uploadListing(e) }}>Publish</button>
+            <button
+              type="submit"
+              onClick={(e) => {
+                uploadListing(e);
+              }}
+            >
+              Publish
+            </button>
           </div>
         </form>
       </div>

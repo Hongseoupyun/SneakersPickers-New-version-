@@ -1,7 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
-
 import Profile from "./MyAccount/Profile";
 import Offers from "./MyAccount/Offers";
 import MyListings from "./MyAccount/MyListings";
@@ -12,7 +11,7 @@ import Login from "./loginpage/Login";
 import Register from "./registerpage/Register";
 import Logout from "./logout/Logout";
 import Placeoffer from "./browse/Placeoffer";
-import Accepted from "./history/acceptedOffers"
+import Accepted from "./history/acceptedOffers";
 
 const Main = () => {
   return (

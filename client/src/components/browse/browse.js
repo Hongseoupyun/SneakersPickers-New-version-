@@ -1,27 +1,24 @@
 import React, { useState, useEffect } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './browse.scss'
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./browse.scss";
 import axios from "axios";
-import ListingItem from "./ListingItem"
+import ListingItem from "./ListingItem";
 
 function Browse() {
-
-  const [listings, setListings] = useState([])
-  const [brands, setBrands] = useState("")
-  const [sizes, setSizes] = useState("")
+  const [listings, setListings] = useState([]);
+  const [brands, setBrands] = useState("");
+  const [sizes, setSizes] = useState("");
 
   //loads listing on page-load
   useEffect(() => {
-    loadListing()
+    loadListing();
   }, []);
 
   //loads all available listing
   function loadListing() {
-    return (axios.get('/api/alllistings')
-      .then((result) => {
-        setListings(result.data)
-      })
-    )
+    return axios.get("/api/alllistings").then((result) => {
+      setListings(result.data);
+    });
   }
 
   //assigns result variable to pass to ListingItem
@@ -40,25 +37,26 @@ function Browse() {
     );
   });
 
-
   //fetches filtered api with onclick from filter button
   function loadFilter() {
-    return (axios.post('/api/listingsfilter', { size: sizes, brand: brands })
+    return axios
+      .post("/api/listingsfilter", { size: sizes, brand: brands })
       .then((result) => {
-        setListings(result.data)
-      })
-    )
+        setListings(result.data);
+      });
   }
 
   //runs each time listings gets updated
-
-
   return (
-
     <div className="browse-body">
       <div className="filter-bar">
-        
-        <select name="brand" id="brand-browse" onChange={(e) => { setBrands(e.target.value) }}>
+        <select
+          name="brand"
+          id="brand-browse"
+          onChange={(e) => {
+            setBrands(e.target.value);
+          }}
+        >
           <optgroup label="Brand">
             <option value="Air Jordan">Air Jordan</option>
             <option value="Nike Dunks">Nike Dunks</option>
@@ -69,9 +67,14 @@ function Browse() {
             <option value="Others">Others</option>
           </optgroup>
         </select>
-        
-        
-        <select name="size" id="size-browse" onChange={(e) => { setSizes(e.target.value) }}>
+
+        <select
+          name="size"
+          id="size-browse"
+          onChange={(e) => {
+            setSizes(e.target.value);
+          }}
+        >
           <optgroup label="Size">
             <option value="4">Size 4</option>
             <option value="5">Size 5</option>
@@ -84,11 +87,15 @@ function Browse() {
             <option value="12">Size 12</option>
           </optgroup>
         </select>
-        
-        <button type="submit" id="search" onClick={() => loadFilter()} >Search</button>
-        <button type="button" id="reset" onClick={() => loadListing()} >Reset</button>
+
+        <button type="submit" id="search" onClick={() => loadFilter()}>
+          Search
+        </button>
+        <button type="button" id="reset" onClick={() => loadListing()}>
+          Reset
+        </button>
       </div>
-        {cardListing}
+      {cardListing}
     </div>
   );
 }
