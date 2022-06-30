@@ -8,7 +8,7 @@ export default function ListingItem(props) {
   const navigate = useNavigate();
   const { name, size, brand, description, preference, id, picture } = props;
   const LoggedIn = localStorage.getItem("isLoggedIn");
-  const handleClick = () => {
+  const handleOffer = () => {
     LoggedIn === "true" ? navigate(`/placeoffer/${id}`) : navigate("/login");
   };
   return (
@@ -31,7 +31,7 @@ export default function ListingItem(props) {
           <span>{description}</span>
         </div>
         <div className="make-offers">
-          <button type="submit" onClick={handleClick}>
+          <button type="submit" onClick={handleOffer}>
             Make a Offer
           </button>
         </div>

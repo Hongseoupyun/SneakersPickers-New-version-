@@ -20,7 +20,6 @@
   display: flex;
   border-radius: 20px;
   flex-direction: column;
-  animation: slide-up-noop 1.3s ease-out;
 }
 .placeoffer-mylisting {
   display: flex;
@@ -107,7 +106,7 @@ button .login-button {
   margin-right: 2vw;
   border-radius: 20px;
   position: relative;
-  animation: slide-noop 1.3s ease-out;
+  animation: slide 1.3s ease-out;
   transform: scale(1);
   transition: 0.7s;
   cursor: pointer;

@@ -96,7 +96,6 @@ function NavBar() {
               <NavDropdown.Item
                 onClick={() => {
                   localStorage.setItem("isLoggedIn", false);
-                  setName("Guest");
                   window.open("/", "_self");
                 }}
               >
