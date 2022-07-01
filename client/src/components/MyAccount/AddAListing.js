@@ -9,19 +9,20 @@ import "react-toastify/dist/ReactToastify.css";
 
 function AddAListing() {
   const navigate = useNavigate();
-
-  const [name, setName] = useState("");
-  const [size, setSize] = useState("");
-  const [brand, setBrand] = useState("");
-  const [description, setDescription] = useState("");
-  const [img, setImg] = useState("");
-  const [preference, setPreference] = useState("");
+  const [state, setState] = useState({
+    name: "",
+    size: "",
+    brand: "",
+    description: "",
+    img: "",
+    preference: "",
+  });
 
   //send data to api
   const uploadListing = function (e) {
     e.preventDefault();
     axios
-      .post("api/listings", { name, size, brand, description, img, preference })
+      .post("api/listings", { state })
       .then(() => {
         successToast();
       })
@@ -54,9 +55,9 @@ function AddAListing() {
             <input
               type="text"
               name="shoes-name"
-              value={name}
+              value={state.name}
               onChange={(e) => {
-                setName(e.target.value);
+                setState({ ...state, name: e.target.value });
               }}
               autoComplete="off"
               required
@@ -65,7 +66,13 @@ function AddAListing() {
           </div>
           <div className="size-brand">
             <div>
-              <select name="size" className="size" onChange={(e)=>setSize(e.target.value)}>
+              <select
+                name="size"
+                className="size"
+                onChange={(e) => {
+                  setState({ ...state, size: e.target.value });
+                }}
+              >
                 <option value="4">Size 4</option>
                 <option value="5">Size 5</option>
                 <option value="6">Size 6</option>
@@ -82,7 +89,7 @@ function AddAListing() {
                 name="brand"
                 className="brand"
                 onChange={(e) => {
-                  setBrand(e.target.value);
+                  setState({ ...state, brand: e.target.value });
                 }}
               >
                 <option value="Air Jordan">Air Jordan</option>
@@ -99,9 +106,9 @@ function AddAListing() {
             <input
               type="text"
               name="description"
-              value={description}
+              value={state.description}
               onChange={(e) => {
-                setDescription(e.target.value);
+                setState({ ...state, description: e.target.value });
               }}
               autoComplete="off"
               required
@@ -112,9 +119,9 @@ function AddAListing() {
             <input
               type="text"
               name="img-url"
-              value={img}
+              value={state.img}
               onChange={(e) => {
-                setImg(e.target.value);
+                setState({ ...state, img: e.target.value });
               }}
               autoComplete="off"
               required
@@ -125,9 +132,9 @@ function AddAListing() {
             <input
               type="text"
               name="pref"
-              value={preference}
+              value={state.preference}
               onChange={(e) => {
-                setPreference(e.target.value);
+                setState({ ...state, preference: e.target.value });
               }}
               autoComplete="off"
               required

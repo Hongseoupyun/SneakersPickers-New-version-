@@ -8,7 +8,7 @@ module.exports = (db) => {
       .then((result) => {
         res.json(result.rows);
       })
-      .catch((err) => [console.log("Error found in listings =>", err)]);
+      .catch((err) => {console.log("Error found in listings =>", err)});
   });
   return router;
 };
