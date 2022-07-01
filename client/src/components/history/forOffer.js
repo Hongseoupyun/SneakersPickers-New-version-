@@ -46,17 +46,22 @@ export default function ForOffers(props) {
     <section className="mylisting-container-history-left">
       <div className="myoffers-cards" id="left">
         <img className="history-img" src={props.image_url} alt="" />
-        <div className="listing-text-history" >
+        <div className="listing-text-history">
           <h1>{props.name}</h1>
-          <div className="myoffers-text"><MdDescription />{props.description}</div>
-          <div className="myoffers-text"><GiBarefoot/>{props.brand}/Size {props.size}</div>
+          <div className="myoffers-text">
+            <MdDescription />
+            {props.description}
+          </div>
+          <div className="myoffers-text">
+            <GiBarefoot />
+            {props.brand}/Size {props.size}
+          </div>
         </div>
       </div>
-        <div className="tradepic" id="history_trade_icon">
-          <img src={tradeImg} alt="" />
-        </div>
+      <div className="tradepic" id="history_trade_icon">
+        <img src={tradeImg} alt="" />
+      </div>
       {showIndividual}
-
     </section>
   );
 }

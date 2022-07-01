@@ -29,18 +29,17 @@ const acceptBuyer = `
 UPDATE listings SET active = FALSE where listings.id = $1
 `;
 
-const declineOffer= `
+const declineOffer = `
 UPDATE offers SET pending = FALSE where offers.offerid = $1
 `;
 
 module.exports = (db) => {
-
   router.get("/offerlist", (req, res) => {
     // console.log("User id:", req.user.id)
-    console.log("offerlist")
+    console.log("offerlist");
     db.query(queryListings, [req.user.id])
       .then((result) => {
-        console.log("seller's info:", result.rows)
+        console.log("seller's info:", result.rows);
         // console.log("/////////////////////////////SELLERS DATA")
         res.json(result.rows);
       })
@@ -54,7 +53,7 @@ module.exports = (db) => {
 
     db.query(offeredListings, [req.body.offeredid, req.body.wantedID])
       .then((result) => {
-        console.log("buyer's info:", result.rows)
+        console.log("buyer's info:", result.rows);
         // console.log("/////////////////////////////////BUYERS DATA")
         // console.log(req.body.wantedID)
         res.json(result.rows);
@@ -65,16 +64,15 @@ module.exports = (db) => {
   });
 
   router.post("/acceptoffer", (req, res) => {
-
-    console.log("accepted offer", req.body.offerid)
+    console.log("accepted offer", req.body.offerid);
     db.query(acceptOffer, [req.body.offerid])
       .then((result) => {
-        console.log("changing seller info")
-        db.query(acceptSeller, [req.body.wantedID])
+        console.log("changing seller info");
+        db.query(acceptSeller, [req.body.wantedID]);
       })
       .then((result) => {
-        console.log("changing buyers info")
-        db.query(acceptBuyer, [req.body.offeredid])
+        console.log("changing buyers info");
+        db.query(acceptBuyer, [req.body.offeredid]);
       })
       .then((result) => {
         res.json(result);
@@ -85,10 +83,10 @@ module.exports = (db) => {
   });
 
   router.post("/declineoffer", (req, res) => {
-    console.log("offerid:", req.body.offerid)
+    console.log("offerid:", req.body.offerid);
     db.query(declineOffer, [req.body.offerid])
       .then((result) => {
-        console.log("buyer's info:", result.rows)
+        console.log("buyer's info:", result.rows);
         res.json(result.rows);
       })
       .catch((err) => {
@@ -96,12 +94,5 @@ module.exports = (db) => {
       });
   });
 
-
   return router;
 };
-
-
-
-
-
-

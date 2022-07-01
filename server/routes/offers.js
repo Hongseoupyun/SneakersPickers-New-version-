@@ -29,14 +29,12 @@ const offerQuery = ``;
 
 module.exports = (db) => {
   router.get("/offers", (req, res) => {
-    const user_id = 3
+    const user_id = 3;
     db.query(queryListing, [user_id])
-    .then((result)=>{
-      res.json(result.rows)
-    })
-    .catch((err)=>[
-      console.log("Error!", err)
-    ])
-  })
+      .then((result) => {
+        res.json(result.rows);
+      })
+      .catch((err) => [console.log("Error!", err)]);
+  });
   return router;
-}
+};

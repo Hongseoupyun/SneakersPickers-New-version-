@@ -1,4 +1,4 @@
-const router = require('express').Router();
+const router = require("express").Router();
 
 let queryString = `
 SELECT *
@@ -9,21 +9,18 @@ AND size = $1
 AND brand = $2;
 `;
 
-
 // Route /api/listings
-module.exports = db => {
+module.exports = (db) => {
   router.post("/listingsfilter", (req, res) => {
-    console.log(req.body)
+    console.log(req.body);
     db.query(queryString, [req.body.size, req.body.brand])
-    .then(result => {
-      rows = result.rows;
-      res.json(result.rows);
-    })
-    .catch(err => {
-      res
-      .status(500)
-      .json({ error: err.message });
-    });
+      .then((result) => {
+        rows = result.rows;
+        res.json(result.rows);
+      })
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
+      });
   });
   return router;
 };

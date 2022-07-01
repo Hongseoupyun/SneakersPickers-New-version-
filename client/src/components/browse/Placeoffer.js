@@ -4,15 +4,13 @@ import "./Placeoffer.scss";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import MyItems from "./MyItems";
-import { ToastContainer, toast } from "react-toastify"
-import "react-toastify/dist/ReactToastify.css"
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { BsFillBookmarkHeartFill } from "react-icons/bs";
 import { MdDescription } from "react-icons/md";
 import { GiBarefoot } from "react-icons/gi";
 import tradeImg from "../images/trade.png";
 function Placeoffer() {
-
-
   const { id } = useParams();
 
   const [offeredID, setOfferedID] = useState();
@@ -59,46 +57,38 @@ function Placeoffer() {
     toast("Offer placed successfully!", {
       className: "custom-toast",
       draggable: true,
-      position: toast.POSITION.TOP_CENTER
+      position: toast.POSITION.TOP_CENTER,
     });
   };
 
   useEffect(() => {
-    loadMyListings()
-    loadListing()
-  }, [])
-
-
+    loadMyListings();
+    loadListing();
+  }, []);
 
   //sends axios post request using id from param, and offeredID from selected on myListed component
   const handleOffer = () => {
-    return (axios.post('/api/makeoffer', { listingID: Number(id), offeredID: offeredID })
+    return axios
+      .post("/api/makeoffer", { listingID: Number(id), offeredID: offeredID })
       .then((result) => {
-        successToast()
+        successToast();
       })
       .then(() => {
-        setTimeout(() => window.open('/browse', "_self"), 1300)
+        setTimeout(() => window.open("/browse", "_self"), 1300);
       })
       .catch(() => {
-        console.log("error")
-      })
-    )
-  }
-
+        console.log("error");
+      });
+  };
 
   return (
     <div className="placeoffer-body">
       {listing && myListings ? (
         <>
           <article className="placeoffers-cards">
-            <ToastContainer
-              autoClose={1300}
-            />
+            <ToastContainer autoClose={1300} />
             <div className="placeoffer-other-card">
-              <img
-                className="placeoffer-img"
-                src={listing.image_url}
-              />
+              <img className="placeoffer-img" src={listing.image_url} />
               <div className="placeoffer-name">{listing.name}</div>
               <div className="placeoffer-texts">
                 <div className="placeoffer-pref">
@@ -109,17 +99,29 @@ function Placeoffer() {
                   <MdDescription />
                   <span>{listing.description}</span>
                 </div>
-                <div className="placeoffer-brand-size"><GiBarefoot /> {listing.brand}/Size: {listing.size}</div>
+                <div className="placeoffer-brand-size">
+                  <GiBarefoot /> {listing.brand}/Size: {listing.size}
+                </div>
               </div>
             </div>
 
             <div className="placeoffer-tradeimg">
-              <button className="placeoffer-button" id="button-offer" onClick={handleOffer}>Offer</button>
+              <button
+                className="placeoffer-button"
+                id="button-offer"
+                onClick={handleOffer}
+              >
+                Offer
+              </button>
               <img className="tradeimg" src={tradeImg} />
-              <a href="/browse"><button className="placeoffer-button" id="button-cancel">Cancel</button></a>
+              <a href="/browse">
+                <button className="placeoffer-button" id="button-cancel">
+                  Cancel
+                </button>
+              </a>
             </div>
 
-            <div >{myListed}</div>
+            <div>{myListed}</div>
           </article>
         </>
       ) : (
