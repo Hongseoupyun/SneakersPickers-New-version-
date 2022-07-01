@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { BsFillBookmarkHeartFill } from "react-icons/bs";
+import React from "react";
 import { MdDescription } from "react-icons/md";
 import { GiBarefoot } from "react-icons/gi";
 import { FiMail, FiUser } from "react-icons/fi";

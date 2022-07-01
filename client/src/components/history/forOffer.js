@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import tradeImg from "../images/trade.png";
 import axios from "axios";
 import ByOffer from "./byOffer";
-import { BsFillBookmarkHeartFill } from "react-icons/bs";
 import { MdDescription } from "react-icons/md";
 import { GiBarefoot } from "react-icons/gi";
 
