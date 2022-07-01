@@ -2,7 +2,7 @@ import React, { useState, useEffect} from "react";
 import "./Offers.scss"
 import axios from "axios";
 import MyOffers from "./MyOffers"
-import {ToastContainer, toast, Zoom, Bounce} from "react-toastify"
+import {ToastContainer, toast} from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
 
