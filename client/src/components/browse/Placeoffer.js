@@ -10,6 +10,7 @@ import { BsFillBookmarkHeartFill } from "react-icons/bs";
 import { MdDescription } from "react-icons/md";
 import { GiBarefoot } from "react-icons/gi";
 import tradeImg from "../images/trade.png";
+
 function Placeoffer() {
   const { id } = useParams();
 

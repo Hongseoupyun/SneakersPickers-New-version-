@@ -5,7 +5,7 @@
   font-size: 1.4rem;
   display: flex;
   flex-direction: column;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
 #browse-desc {
@@ -15,7 +15,7 @@
   left: 4%;
   display: flex;
   flex-direction: column;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 #browse-name {
   position: relative;
@@ -29,7 +29,7 @@
   top: -17%;
 
   button {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     color: white;
     position: relative;
     font-weight: 700;
@@ -42,13 +42,13 @@
     background-color: navy;
     border: none;
     &:hover {
-      background-color: #EA7317;
+      background-color: #ea7317;
     }
   }
 }
 
 #brand-size-br {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   font-size: 1.5rem;
   position: relative;
   top: 28%;
@@ -75,14 +75,12 @@
 }
 
 @keyframes slide-up {
-  from{
-    bottom:-300px;
+  from {
+    bottom: -300px;
     opacity: 0;
-
   }
-  to{
-    bottom:0px;
+  to {
+    bottom: 0px;
     opacity: 1;
-
   }
 }
