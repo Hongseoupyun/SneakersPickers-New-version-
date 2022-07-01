@@ -21,7 +21,6 @@ function Placeoffer() {
   //Gets the listing from the selected listing
   function loadListing() {
     return axios.get(`/api/listeditem/${id}`).then((result) => {
-      // console.log("load listing:", result.data[0])
       setListing(result.data[0]);
     });
   }
@@ -33,9 +32,6 @@ function Placeoffer() {
       setMyListings(result.data);
     });
   };
-
-  console.log("mylisting:", typeof Number(id));
-  console.log(typeof offeredID);
 
   const myListed = myListings.map((e) => {
     return (
@@ -53,7 +49,7 @@ function Placeoffer() {
       />
     );
   });
-
+//success toast message
   const successToast = () => {
     toast("Offer placed successfully!", {
       className: "custom-toast",
@@ -61,7 +57,7 @@ function Placeoffer() {
       position: toast.POSITION.TOP_CENTER,
     });
   };
-
+//loadlisting when rendering this component
   useEffect(() => {
     loadMyListings();
     loadListing();
