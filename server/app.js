@@ -44,7 +44,7 @@ const myListingsRouter = require("./routes/mylistings");
 const listedItemOfferingRouter = require("./routes/listedItemOffering")
 const addAListingRouter = require("./routes/addalisting")
 const makeOfferRouter = require("./routes/makeoffer");
-const offerListRouter = require("./routes/offerList")
+const myOfferRouter = require("./routes/myoffer")
 const historyRouter = require("./routes/history.js")
 
 //routes
@@ -58,7 +58,7 @@ app.use("/api", myListingsRouter(db));
 app.use("/api", listedItemOfferingRouter(db));
 app.use("/api", addAListingRouter(db));
 app.use("/api", makeOfferRouter(db))
-app.use("/api", offerListRouter(db))
+app.use("/api", myOfferRouter(db))
 app.use("/api", historyRouter(db))
 
 module.exports = app;

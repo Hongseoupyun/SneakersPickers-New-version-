@@ -5,7 +5,7 @@ import OfferedItem from "./OfferedItem";
 import { BsFillBookmarkHeartFill } from "react-icons/bs";
 import { MdDescription } from "react-icons/md";
 import { GiBarefoot } from "react-icons/gi";
-import {ToastContainer, toast, Zoom, Bounce} from "react-toastify"
+import {ToastContainer, toast} from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
 //Component path: Offer > MyOffer > OfferedItem
@@ -47,10 +47,10 @@ export default function MyOffers(props) {
         offeredid: props.offered_item_id,
         wantedID: props.wanted_item_id,
       })
-      .then((result) => {
+      .then(() => {
         acceptToast()
       })
-      .then((result) => {
+      .then(() => {
         console.log("offer accepted");
         setTimeout(() => window.open("/offers", "_self"), 1000);
       });
@@ -59,10 +59,10 @@ export default function MyOffers(props) {
   const declineOffer = function () {
     return axios
       .post("/api/declineoffer", { offerid: props.offerid })
-      .then((result) => {
+      .then(() => {
         declineToast()
       })
-      .then((result) => {
+      .then(() => {
         console.log("offer declined");
         setTimeout(() => window.open("/offers", "_self"), 1000);
       });
