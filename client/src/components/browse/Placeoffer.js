@@ -28,7 +28,6 @@ function Placeoffer() {
   //Gets all of user's listing to offer
   const loadMyListings = function () {
     axios.get("/api/mylistings").then((result) => {
-      console.log("result.data from mylistings=>", result.data);
       setMyListings(result.data);
     });
   };

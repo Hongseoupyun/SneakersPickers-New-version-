@@ -30,7 +30,6 @@ function NavBar() {
     axios
       .get("api/offerlist")
       .then((result) => {
-        console.log(result);
         if (result.data.length === 0) {
           setNotification(false);
         } else {
