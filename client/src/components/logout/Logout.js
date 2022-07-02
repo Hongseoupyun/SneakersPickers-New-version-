@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 
 function Logout() {
-
   function logout() {
     localStorage.setItem("isLoggedIn", false);
     window.open("/", "_self");
