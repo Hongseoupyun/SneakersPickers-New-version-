@@ -22,7 +22,7 @@ function AddAListing() {
   const uploadListing = function (e) {
     e.preventDefault();
     axios
-      .post("api/listings", { state })
+      .post("api/listings", state )
       .then(() => {
         successToast();
       })
