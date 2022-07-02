@@ -57,7 +57,7 @@ function Placeoffer() {
       position: toast.POSITION.TOP_CENTER,
     });
   };
-  //
+  //error toast message
   const errorToast = () => {
     toast.error("Please select shoes", {
       className: "custom-toast",
