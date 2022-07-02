@@ -9,7 +9,7 @@ export default function OfferedItem(props) {
   return (
    
     <div className="myoffers-cards" id="right">
-      <img className="myoffers-img" src={props.image_url} alt="" />
+      <img className="myoffers-img" src={props.image_url} alt="shoe-img" />
       <div className="listing-text-history" >
           <h1>{props.name}</h1>
           <div className="myoffers-text"><BsFillBookmarkHeartFill /> {props.preference}</div>

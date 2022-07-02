@@ -45,7 +45,7 @@ export default function ForOffers(props) {
   return (
     <section className="mylisting-container-history-left">
       <div className="myoffers-cards" id="left">
-        <img className="history-img" src={props.image_url} alt="" />
+        <img className="history-img" src={props.image_url} alt="shoe-img" />
         <div className="listing-text-history">
           <h1>{props.name}</h1>
           <div className="myoffers-text">
@@ -59,7 +59,7 @@ export default function ForOffers(props) {
         </div>
       </div>
       <div className="tradepic" id="history_trade_icon">
-        <img src={tradeImg} alt="" />
+        <img src={tradeImg} alt="shoe-img" />
       </div>
       {showIndividual}
     </section>

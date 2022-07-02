@@ -94,7 +94,7 @@ export default function MyOffers(props) {
         autoClose={1000}
       />
       <div className="myoffers-cards" id="left">
-        <img className="myoffers-img" src={props.image_url} alt="" />
+        <img className="myoffers-img" src={props.image_url} alt="shoe-img" />
         <div className="listing-text-history" >
           <h1>{props.name}</h1>
           <div className="myoffers-text"><BsFillBookmarkHeartFill /> {props.preference}</div>
@@ -106,7 +106,7 @@ export default function MyOffers(props) {
         <button className="acceptofferbutton" onClick={acceptOffer}>
           Accept
         </button>
-        <img className="tradepic" src={tradeImg} alt="" />
+        <img className="tradepic" src={tradeImg} alt="shoe-img" />
         <button className="declineofferbutton" onClick={declineOffer}>
           Decline
         </button>

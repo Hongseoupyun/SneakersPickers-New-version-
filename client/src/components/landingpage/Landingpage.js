@@ -46,7 +46,7 @@ function Landingpage() {
               </span>
             </div>
             <span className="about-image">
-              <img src={tradingaboutus} alt="" className="about-image" />
+              <img src={tradingaboutus} alt="about-img" className="about-image" />
             </span>
           </div>
         </article>

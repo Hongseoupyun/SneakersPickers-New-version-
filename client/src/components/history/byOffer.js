@@ -10,7 +10,7 @@ export default function ByItem(props) {
       <img
         className="myoffers-img"
         src={props.image_url}
-        alt=""
+        alt="shoe-img"
         id="history_id_card"
       />
       <div className="listing-text-history">

@@ -47,7 +47,7 @@ function AddAListing() {
       <div className="master-container">
         <ToastContainer autoClose={1500} />
         <div>
-          <img className="add-a-listing-img" name src={addSneakers} />
+          <img className="add-a-listing-img" name src={addSneakers} alt="shoe-img" />
         </div>
         <form className="form">
           <h3 className="form-heading">Upload your shoes to trade</h3>

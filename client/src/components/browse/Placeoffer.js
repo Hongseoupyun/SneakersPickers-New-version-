@@ -85,7 +85,7 @@ function Placeoffer() {
           <article className="placeoffers-cards">
             <ToastContainer autoClose={1300} />
             <div className="placeoffer-other-card">
-              <img className="placeoffer-img" src={listing.image_url} />
+              <img className="placeoffer-img" src={listing.image_url} alt="shoe-img"/>
               <div className="placeoffer-name">{listing.name}</div>
               <div className="placeoffer-texts">
                 <div className="placeoffer-pref">
@@ -110,7 +110,7 @@ function Placeoffer() {
               >
                 Offer
               </button>
-              <img className="tradeimg" src={tradeImg} />
+              <img className="tradeimg" src={tradeImg} alt="shoe-img" />
               <a href="/browse">
                 <button className="placeoffer-button" id="button-cancel">
                   Cancel

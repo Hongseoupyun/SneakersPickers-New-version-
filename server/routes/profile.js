@@ -10,7 +10,6 @@ module.exports = (db) => {
     db.query(queryUser, [req.user.id])
       .then((result) => {
         res.json(result.rows[0]);
-        console.log(result.rows[0]);
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });

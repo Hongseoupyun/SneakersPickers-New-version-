@@ -8,7 +8,7 @@ export default function MyListingItem(props) {
   console.log("total offers:", props.total_offers);
   return (
     <section className="mylisting-container">
-      <img className="mylisting-img" src={img} />
+      <img className="mylisting-img" src={img} alt="shoe-img" />
 
       <div className="mylisting-card-contents">
         <div className="listing-text" id="name">
