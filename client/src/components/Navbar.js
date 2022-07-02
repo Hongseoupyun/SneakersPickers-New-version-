@@ -16,12 +16,14 @@ function NavBar() {
 
   //fetch data from api using axios
   const getUsersProfile = function () {
-    return axios.get("api/profile").then((result) => {
-      setName(result.data.user_name);
-    })
-    .catch((err) => {
-      console.log("Error Occured =>", err);
-    });
+    return axios
+      .get("api/profile")
+      .then((result) => {
+        setName(result.data.user_name);
+      })
+      .catch((err) => {
+        console.log("Error Occured =>", err);
+      });
   };
 
   const loadMyListings = function () {
@@ -45,8 +47,7 @@ function NavBar() {
     getUsersProfile();
     loadMyListings();
   }, []);
-  console.log("userloggedin =>",name);
-
+  console.log("userloggedin =>", name);
 
   return (
     <Navbar
@@ -57,9 +58,7 @@ function NavBar() {
     >
       <Navbar.Brand className="logoname" href="/">
         SNEAKERSPICKERS
-        {LoggedIn === "true" && (
-          <div className="username">Welcome, {name}</div>
-        )}
+        {LoggedIn === "true" && <div className="username">Welcome, {name}</div>}
         {LoggedIn === "false" && <div className="username">Welcome, Guest</div>}
       </Navbar.Brand>
 
