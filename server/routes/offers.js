@@ -19,14 +19,6 @@ JOIN listings AS to_list ON offers.listing_offer_made_to_id = to_list.id
 WHERE to_list.user_id = $1 AND offers.pending = TRUE
 `;
 
-const userQuery = ``;
-
-const selectQuery = `
-SELECT * FROM listings WHERE user_id = $1
-`;
-
-const offerQuery = ``;
-
 module.exports = (db) => {
   router.get("/offers", (req, res) => {
     const user_id = 3;

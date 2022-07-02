@@ -14,7 +14,7 @@ import tradeImg from "../images/trade.png";
 function Placeoffer() {
   const { id } = useParams();
 
-  const [offeredID, setOfferedID] = useState();
+  const [offeredID, setOfferedID] = useState(null);
   const [listing, setListing] = useState([]);
   const [myListings, setMyListings] = useState([]);
 
@@ -73,7 +73,9 @@ function Placeoffer() {
 
   //sends axios post request using id from param, and offeredID from selected on myListed component
   const handleOffer = () => {
-    if (offeredID === true) {
+    if (offeredID === null) {
+      errorToast();
+    } else {
       return axios
         .post("/api/makeoffer", { listingID: Number(id), offeredID: offeredID })
         .then(() => {
@@ -85,8 +87,6 @@ function Placeoffer() {
         .catch(() => {
           console.log("error");
         });
-    } else {
-      errorToast();
     }
   };
 
