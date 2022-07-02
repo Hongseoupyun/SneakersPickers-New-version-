@@ -57,6 +57,14 @@ function Placeoffer() {
       position: toast.POSITION.TOP_CENTER,
     });
   };
+  //
+  const errorToast = () => {
+    toast.error("Please select shoes", {
+      className: "custom-toast",
+      draggable: true,
+      position: toast.POSITION.TOP_CENTER,
+    });
+  };
   //loadlisting when rendering this component
   useEffect(() => {
     loadMyListings();
@@ -65,17 +73,21 @@ function Placeoffer() {
 
   //sends axios post request using id from param, and offeredID from selected on myListed component
   const handleOffer = () => {
-    return axios
-      .post("/api/makeoffer", { listingID: Number(id), offeredID: offeredID })
-      .then(() => {
-        successToast();
-      })
-      .then(() => {
-        setTimeout(() => window.open("/browse", "_self"), 1300);
-      })
-      .catch(() => {
-        console.log("error");
-      });
+    if (offeredID === true) {
+      return axios
+        .post("/api/makeoffer", { listingID: Number(id), offeredID: offeredID })
+        .then(() => {
+          successToast();
+        })
+        .then(() => {
+          setTimeout(() => window.open("/browse", "_self"), 1300);
+        })
+        .catch(() => {
+          console.log("error");
+        });
+    } else {
+      errorToast();
+    }
   };
 
   return (
