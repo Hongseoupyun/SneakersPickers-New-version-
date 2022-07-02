@@ -49,7 +49,7 @@ function Placeoffer() {
       />
     );
   });
-//success toast message
+  //success toast message
   const successToast = () => {
     toast("Offer placed successfully!", {
       className: "custom-toast",
@@ -57,7 +57,7 @@ function Placeoffer() {
       position: toast.POSITION.TOP_CENTER,
     });
   };
-//loadlisting when rendering this component
+  //loadlisting when rendering this component
   useEffect(() => {
     loadMyListings();
     loadListing();
@@ -67,7 +67,7 @@ function Placeoffer() {
   const handleOffer = () => {
     return axios
       .post("/api/makeoffer", { listingID: Number(id), offeredID: offeredID })
-      .then((result) => {
+      .then(() => {
         successToast();
       })
       .then(() => {
@@ -85,7 +85,11 @@ function Placeoffer() {
           <article className="placeoffers-cards">
             <ToastContainer autoClose={1300} />
             <div className="placeoffer-other-card">
-              <img className="placeoffer-img" src={listing.image_url} alt="shoe-img"/>
+              <img
+                className="placeoffer-img"
+                src={listing.image_url}
+                alt="shoe-img"
+              />
               <div className="placeoffer-name">{listing.name}</div>
               <div className="placeoffer-texts">
                 <div className="placeoffer-pref">

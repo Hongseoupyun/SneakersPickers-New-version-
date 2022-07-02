@@ -9,10 +9,7 @@ import classNames from "classnames";
 function MyItems(props) {
   const handleClick = () => {
     props.setOfferedID(props.id);
-    console.log("select:", props.id);
   };
-
-  console.log("thisis props id", props.id);
 
   const handleClass = classNames("my-shoes-card", {
     "shoes-selected ": props.offeredID === props.id,
