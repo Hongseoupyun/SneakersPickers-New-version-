@@ -9,11 +9,6 @@ import { MdNotificationsActive } from "react-icons/md";
 function NavBar() {
   //renders navbar based on localstoragestate
   const LoggedIn = localStorage.getItem("isLoggedIn");
-<<<<<<< HEAD
-=======
-  // console.log(typeof LoggedIn)
- 
->>>>>>> main
 
   const [name, setName] = useState();
   const [notification, setNotification] = useState();
