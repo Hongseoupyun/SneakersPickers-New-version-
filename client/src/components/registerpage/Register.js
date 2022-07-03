@@ -59,7 +59,7 @@ function Register() {
         <div className="btn-area">
           <button type="submit" >Save Changes</button>
         </div>
-        <div class="caption">
+        <div className="caption">
             Have an account? Sign in <a href="/login">here</a>
           </div>
       </form>

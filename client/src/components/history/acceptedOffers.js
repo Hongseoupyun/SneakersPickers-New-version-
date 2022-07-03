@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "./acceptedOffers.scss";
+import "./AcceptedOffers.scss";
 import axios from "axios";
-import ForOffers from "./forOffer";
+import ForOffers from "./ForOffer";
 
 //Component path: acceptedOffers > forOffer > byOffer
 export default function Offers() {

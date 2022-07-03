@@ -6,12 +6,12 @@ import Offers from "./MyAccount/Offers";
 import MyListings from "./MyAccount/MyListings";
 import AddAListing from "./MyAccount/AddAListing";
 import Landingpage from "./landingpage/Landingpage";
-import Browse from "./browse/browse";
+import Browse from "./browse/Browse";
 import Login from "./loginpage/Login";
 import Register from "./registerpage/Register";
 import Logout from "./logout/Logout";
 import Placeoffer from "./browse/Placeoffer";
-import Accepted from "./history/acceptedOffers";
+import Accepted from "./history/AcceptedOffers";
 
 const Main = () => {
   return (

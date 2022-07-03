@@ -9,6 +9,11 @@ import { MdNotificationsActive } from "react-icons/md";
 function NavBar() {
   //renders navbar based on localstoragestate
   const LoggedIn = localStorage.getItem("isLoggedIn");
+<<<<<<< HEAD
+=======
+  // console.log(typeof LoggedIn)
+ 
+>>>>>>> main
 
   const [name, setName] = useState();
   const [notification, setNotification] = useState();
@@ -29,7 +34,6 @@ function NavBar() {
     axios
       .get("api/offerlist")
       .then((result) => {
-        console.log(result);
         if (result.data.length === 0) {
           setNotification(false);
         } else {
@@ -91,11 +95,7 @@ function NavBar() {
                 Add a listing
               </NavDropdown.Item>
               <NavDropdown.Item href="/history">History</NavDropdown.Item>
-              <NavDropdown.Item
-                onClick={() => {
-                  localStorage.setItem("isLoggedIn", false);
-                  window.open("/", "_self");
-                }}
+              <NavDropdown.Item href="/logout"
               >
                 Logout
               </NavDropdown.Item>

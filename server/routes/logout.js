@@ -1,11 +1,12 @@
 const { Router } = require("express");
 const router = Router();
 
-router.post("/logout", function (req, res) {
-  const { logout } = req;
-  logout();
-
-  res.status(200);
+router.get("/logout", function (req, res) {
+  res.status(200).clearCookie("connect.sid", { path: "/" });
+  req.session.destroy(function () {
+    res.redirect("/");
+  });
+  
 });
 
 module.exports = router;

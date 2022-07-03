@@ -3,7 +3,7 @@ const uploadListing = `INSERT INTO listings (user_id, name, description, brand, 
 
 module.exports = (db) => {
   router.post("/listings", (req, res) => {
-    const { name, size, brand, description, img, preference } = req.body.state;
+    const { name, size, brand, description, img, preference } = req.body;
     console.log(req.body);
     const userId = req.user.id;
     db.query(uploadListing, [
