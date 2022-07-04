@@ -35,7 +35,7 @@ UPDATE offers SET pending = FALSE where offers.offerid = $1
 
 module.exports = (db) => {
   router.get("/offerlist", (req, res) => {
-    db.query(queryListings, [req.user.id])
+    db.query(queryListings, [req.user?.id])
       .then((result) => {
         res.json(result.rows);
       })
