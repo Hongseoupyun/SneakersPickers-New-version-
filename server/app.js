@@ -7,6 +7,8 @@ const passport = require("passport");
 const session = require("express-session");
 const bodyParser = require("body-parser");
 const local = require("./strategies/local");
+
+//Live chat with socket.io
 // const {Server} = require('socket.io');
 
 
