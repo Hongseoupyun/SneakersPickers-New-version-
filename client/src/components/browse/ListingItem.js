@@ -33,7 +33,7 @@ export default function ListingItem(props) {
         }
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err.message, ",You should login probably");
         navigate("/login");
       });
   }
