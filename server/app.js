@@ -9,7 +9,7 @@ const bodyParser = require("body-parser");
 const local = require("./strategies/local");
 
 //Live chat with socket.io
-// const {Server} = require('socket.io');
+const socketio = require('socket.io');
 
 
 // db connection
