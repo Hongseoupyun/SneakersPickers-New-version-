@@ -1,4 +1,4 @@
-require('dotenv').config()
+require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
@@ -7,10 +7,6 @@ const passport = require("passport");
 const session = require("express-session");
 const bodyParser = require("body-parser");
 const local = require("./strategies/local");
-
-//Live chat with socket.io
-const socketio = require('socket.io');
-
 
 // db connection
 const db = require("./configs/db.config");
@@ -24,7 +20,24 @@ app.use(
     saveUninitialized: false,
     cookie: { maxAge: 60000000 },
   })
-);
+); 
+
+//Live chat with socket.io
+// const server = require("./bin/www");
+const http = require("http");
+const server = http.createServer(app);
+const socketio = require("socket.io");
+const io = socketio(server);
+
+ io.on("connection",(socket)=>{
+    console.log("we have a new connection for chatting!!!")
+
+    socket.on("disconnect",()=>{
+      console.log("user had left from chatting!")
+    })
+
+  })
+
 //using middlewares
 app.use(logger("dev"));
 app.use(express.json());
@@ -43,11 +56,11 @@ const logoutRouter = require("./routes/logout");
 const profileRouter = require("./routes/profile");
 const registerRouter = require("./routes/register");
 const myListingsRouter = require("./routes/mylistings");
-const listedItemOfferingRouter = require("./routes/listedItemOffering")
-const addAListingRouter = require("./routes/addalisting")
+const listedItemOfferingRouter = require("./routes/listedItemOffering");
+const addAListingRouter = require("./routes/addalisting");
 const makeOfferRouter = require("./routes/makeoffer");
-const myOfferRouter = require("./routes/myoffer")
-const historyRouter = require("./routes/history.js")
+const myOfferRouter = require("./routes/myoffer");
+const historyRouter = require("./routes/history.js");
 
 //routes
 app.use("/auth", authRouter);
@@ -59,9 +72,8 @@ app.use("/api", profileRouter(db));
 app.use("/api", myListingsRouter(db));
 app.use("/api", listedItemOfferingRouter(db));
 app.use("/api", addAListingRouter(db));
-app.use("/api", makeOfferRouter(db))
-app.use("/api", myOfferRouter(db))
-app.use("/api", historyRouter(db))
+app.use("/api", makeOfferRouter(db));
+app.use("/api", myOfferRouter(db));
+app.use("/api", historyRouter(db));
 
 module.exports = app;
-
