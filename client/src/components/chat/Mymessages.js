@@ -1,4 +1,5 @@
 import React from "react";
+import "./Mymessages.scss";
 
 export default function Mymessages() {
   return (

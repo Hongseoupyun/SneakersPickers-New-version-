@@ -68,7 +68,7 @@ function NavBar() {
               <MdNotificationsActive className="notificationIcon" />
             </a>
           )}
-          <Nav.Link href="/" className="nav-options">
+          <Nav.Link href="/" className="nav-options" >
             Home
           </Nav.Link>
           <Nav.Link href="/#scroll-about-us" className="nav-options">
@@ -87,7 +87,7 @@ function NavBar() {
               <NavDropdown.Item href="/mylistings">
                 My listings
               </NavDropdown.Item>
-              <NavDropdown.Item href="/mylistings">
+              <NavDropdown.Item href="/mymessages">
                 My messages
               </NavDropdown.Item>
               <NavDropdown.Item href="/addalisting">
