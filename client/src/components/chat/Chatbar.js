@@ -6,8 +6,17 @@ export default function Chatbar() {
   const [room, setRoom] = useState("");
 
   return (
-    <div className="joinOuterContainer">
-      <div className="joinInnerContainer">
+    <div id="chatbar-container" >
+      <div id="conversation" >
+        conversation
+
+      </div>
+      <div id="conversation" >
+        conversation
+
+      </div>
+      <div id="conversation" >
+        conversation
 
       </div>
     </div>
