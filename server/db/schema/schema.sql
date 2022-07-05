@@ -21,8 +21,6 @@ CREATE TABLE listings (
   active BOOLEAN NOT NULL DEFAULT TRUE
 );
 
-
-
 CREATE TABLE offers (
   offerid SERIAL PRIMARY KEY NOT NULL,
   listing_offer_made_to_id INTEGER REFERENCES listings(id) ON DELETE CASCADE,
