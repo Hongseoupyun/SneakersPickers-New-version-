@@ -5,6 +5,7 @@ import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import "./Navbar.css";
 import axios from "axios";
 import { MdNotificationsActive } from "react-icons/md";
+import {AiFillMessage} from "react-icons/ai"
 
 function NavBar() {
   //renders navbar based on localstoragestate
@@ -67,7 +68,7 @@ function NavBar() {
               <MdNotificationsActive className="notificationIcon" />
             </a>
           )}
-          <Nav.Link href="/" className="nav-options">
+          <Nav.Link href="/" className="nav-options" >
             Home
           </Nav.Link>
           <Nav.Link href="/#scroll-about-us" className="nav-options">
@@ -85,6 +86,9 @@ function NavBar() {
               <NavDropdown.Item href="/offers">My offers</NavDropdown.Item>
               <NavDropdown.Item href="/mylistings">
                 My listings
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/mymessages">
+                My messages
               </NavDropdown.Item>
               <NavDropdown.Item href="/addalisting">
                 Add a listing

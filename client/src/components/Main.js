@@ -12,6 +12,7 @@ import Register from "./registerpage/Register";
 import Logout from "./logout/Logout";
 import Placeoffer from "./browse/Placeoffer";
 import Accepted from "./history/AcceptedOffers";
+import Mymessages from "./chat/Mymessages";
 
 const Main = () => {
   return (
@@ -27,6 +28,8 @@ const Main = () => {
       <Route path="/logout" element={<Logout />}></Route>
       <Route path="/placeoffer/:id" element={<Placeoffer />}></Route>
       <Route path="/history" element={<Accepted />}></Route>
+      <Route path="/mymessages" element={<Mymessages />}></Route>
+
     </Routes>
   );  
 };
