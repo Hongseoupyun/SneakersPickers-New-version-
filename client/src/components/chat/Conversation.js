@@ -1,8 +1,14 @@
 import React from "react";
 import "./Conversation.scss"
+import testimg from "../images/aboutus-img3.jpeg"
 
-export default function Conversation () {
+
+
+export default function Conversation() {
   return (
-    <div className="conversation "></div>
+    <div className="conversation">
+      <img className="conversation-img" src={testimg} />
+      <span className="conversation-name">Air Jordan 1</span>
+    </div>
   )
 }
