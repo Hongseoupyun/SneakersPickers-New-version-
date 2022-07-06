@@ -7,7 +7,7 @@ import testimg from "../images/aboutus-img3.jpeg"
 export default function Conversation() {
   return (
     <div className="conversation">
-      <img className="conversation-img" src={testimg} />
+      <img className="conversation-img" src={testimg} alt="conversation-img" />
       <span className="conversation-name">Air Jordan 1</span>
     </div>
   )
