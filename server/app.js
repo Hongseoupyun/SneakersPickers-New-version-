@@ -61,6 +61,7 @@ const addAListingRouter = require("./routes/addalisting");
 const makeOfferRouter = require("./routes/makeoffer");
 const myOfferRouter = require("./routes/myoffer");
 const historyRouter = require("./routes/history.js");
+const messagesRouter = require("./routes/messages");
 
 //routes
 app.use("/auth", authRouter);
@@ -75,5 +76,6 @@ app.use("/api", addAListingRouter(db));
 app.use("/api", makeOfferRouter(db));
 app.use("/api", myOfferRouter(db));
 app.use("/api", historyRouter(db));
+app.use("/api", messagesRouter(db));
 
 module.exports = app;

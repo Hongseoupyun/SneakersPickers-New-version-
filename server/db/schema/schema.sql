@@ -29,3 +29,10 @@ CREATE TABLE offers (
   pending BOOLEAN DEFAULT TRUE
 );
 
+ CREATE TABLE messages (
+   id SERIAL PRIMARY KEY NOT NULL,
+   offer_id INTEGER REFERENCES offers(id) ON DELETE CASCADE,
+  --  sender INTEGER,
+   text VARCHAR(255),
+   time TIMESTAMP NOT NULL DEFAULT current_timestam p
+ );
