@@ -10,6 +10,8 @@ export default function Mymessages() {
         <div className="chat-menu-wrapper">
           <input placeholder="SEARCH" className="chat-menu-input"></input>
           <Conversation/>
+          <Conversation/>
+          <Conversation/>
         </div>
       </div>
       <div className="chat-box">

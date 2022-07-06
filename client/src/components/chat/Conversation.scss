@@ -1,6 +1,12 @@
 .conversation {
   display: flex;
   align-items: center;
+  background-color: white;
+  cursor: pointer;
+  padding:5%;
+  &:hover{
+    background-color: gray;
+  }
 }
 .conversation-img {
   width: 4rem;
