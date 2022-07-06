@@ -1,6 +1,15 @@
 .message {
   display: flex;
   flex-direction: column;
+  color: white;
+  margin-top: 20px;
+  &.own {
+    align-items: flex-end;
+    & .message-text {
+      background-color: navy;
+      margin-right: 10px;
+    }
+  }
 }
 .message-img {
   width: 4rem;
@@ -11,4 +20,15 @@
 }
 .message-top {
   display: flex;
+}
+.message-text {
+  padding: 1rem;
+  border-radius: 20px;
+  background-color: rgb(172, 172, 223);
+  max-width: 25rem;
+}
+
+.message-bottom {
+  font-size: 0.85rem;
+  margin-top: 10px;
 }

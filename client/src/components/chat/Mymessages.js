@@ -1,6 +1,6 @@
 import React from "react";
 import "./Mymessages.scss";
-import { GrSearch } from "react-icons/gr"
+import { GrSend } from "react-icons/gr"
 import Conversation from "./Conversation";
 import Message from "./Message";
 
@@ -19,10 +19,16 @@ export default function Mymessages() {
         <div className="chat-box-wrapper">
           <div className="chat-box-top">
             <Message/>
-            <Message/>
+            <Message own={true}/>
             <Message/> 
+            <Message own={true}/>
+            <Message/>
+            <Message own={true}/>
+            <Message/>
           </div>
           <div className="chat-box-bottom">
+            <textarea className="chat-message-input" placeholder="Type a message"></textarea>
+            <button className="chat-submit-button"><GrSend className="submit-icon"/></button>
 
           </div>
         </div>
