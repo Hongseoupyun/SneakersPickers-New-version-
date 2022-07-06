@@ -12,7 +12,7 @@ function MyItems(props) {
   };
 
   const handleClass = classNames("my-shoes-card", {
-    "shoes-selected ": props.offeredID === props.id,
+    "shoes-selected": props.offeredID === props.id,
   });
 
   return (
