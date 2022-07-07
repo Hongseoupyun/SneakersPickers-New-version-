@@ -1,6 +1,6 @@
 import React from "react";
-import "./Conversation.scss"
-import testimg from "../images/aboutus-img3.jpeg"
+import "./Conversation.scss";
+import testimg from "../images/aboutus-img3.jpeg";
 
 export default function Conversation() {
   return (
@@ -9,5 +9,5 @@ export default function Conversation() {
       <div className="conversation-online-badge"></div>
       <span className="conversation-name">Air Jordan 1</span>
     </div>
-  )
+  );
 }
