@@ -29,7 +29,6 @@ export default function Mymessages() {
           <div className="chat-box-bottom">
             <textarea className="chat-message-input" placeholder="Type a message"></textarea>
             <button className="chat-submit-button"><GrSend className="submit-icon"/></button>
-
           </div>
         </div>
 

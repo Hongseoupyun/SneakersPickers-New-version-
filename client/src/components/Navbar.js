@@ -19,6 +19,7 @@ function NavBar() {
     return axios
       .get("api/profile")
       .then((result) => {
+        console.log(result.data)
         setName(result.data.user_name);
       })
       .catch((err) => {
