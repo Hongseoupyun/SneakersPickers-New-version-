@@ -11,6 +11,7 @@ export default function Offers() {
   const loadMyOffers = function () {
     axios.get("/api/myacceptedoffers").then((result) => {
       setAllMyOffers(result.data);
+      console.log("accepted offer",result.data)
     });
   };
 

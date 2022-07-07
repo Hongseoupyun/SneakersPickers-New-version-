@@ -4,7 +4,7 @@ import { GiBarefoot } from "react-icons/gi";
 import { FiMail, FiUser } from "react-icons/fi";
 
 //Component path: acceptedOffers > forOffer > byOffer
-export default function ByItem(props) {
+export default function ByOffer(props) {
   return (
     <div className="myoffers-cards" id="right">
       <img

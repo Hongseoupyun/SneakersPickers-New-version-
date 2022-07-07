@@ -7,7 +7,8 @@ import axios from "axios";
 
 export default function Mymessages() {
   const [conversations, setConversations] = useState([]);
-
+  const [selectedId, setSelectedId] = useState("")
+  
   const loadConversation = function () {
     axios
       .get("/api/offerlist/conversation")
@@ -19,23 +20,34 @@ export default function Mymessages() {
         console.log(error);
       });
   };
-
+  
   useEffect(() => {
     loadConversation();
   }, []);
 
+  console.log("conversation selected=>",selectedId)
+
   const conversation = conversations.map((conversation) => {
     return (
-      <Conversation key = {conversation.id} img={conversation.image_url} name={conversation.name} />
+      <Conversation
+        key={conversation.id}
+        offerId={conversation.offerid}
+        selectedId={selectedId}
+        setSelectedId={setSelectedId}
+        wanted_item_id={conversation.listing_offer_made_to_id}
+        offered_item_id={conversation.listing_being_offered_id}
+      />
     );
   });
+
+
 
   return (
     <div className="mymessages-body">
       <div className="chat-menu">
         <div className="chat-menu-wrapper">
           <input placeholder="SEARCH" className="chat-menu-input"></input>
-         {conversation}
+          {conversation}
         </div>
       </div>
       <div className="chat-box">
