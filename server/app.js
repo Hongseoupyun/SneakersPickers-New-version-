@@ -62,8 +62,8 @@ const makeOfferRouter = require("./routes/makeoffer");
 const myOfferRouter = require("./routes/myoffer");
 const historyRouter = require("./routes/history.js");
 const messagesRouter = require("./routes/messages");
-const conversationRouter = require("./routes/conversation");
-const { application_name } = require("pg/lib/defaults");
+const mymessagesRouter = require("./routes/mymessages");
+
 //routes
 app.use("/auth", authRouter);
 app.use("/auth", logoutRouter);
@@ -78,6 +78,6 @@ app.use("/api", makeOfferRouter(db));
 app.use("/api", myOfferRouter(db));
 app.use("/api", historyRouter(db));
 app.use("/api", messagesRouter(db));
-app.use("/api",conversationRouter(db));
+app.use("/api", mymessagesRouter(db));
 
 module.exports = app;

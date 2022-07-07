@@ -11,9 +11,11 @@ AND
 complete IS TRUE;
 `;
 
-module.exports = (db) =>{
-  router.get("/offerlist/conversation",(req,res) => {
-    db.query(getOffer,[req.user?.id])
-    
-  })
-}
+module.exports = (db) => {
+  router.get("/offerlist/conversation", (req, res) => {
+    db.query(getOffer, [req.user?.id]).then((result) => [
+      res.json(result.rows)
+    ]);
+  });
+  return router;
+};
