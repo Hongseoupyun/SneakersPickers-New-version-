@@ -7,26 +7,37 @@ import axios from "axios";
 
 export default function Mymessages() {
   const [conversations, setConversations] = useState([]);
-
+  const [selectedId, setSelectedId] = useState("")
+  
+  //loads accepted offers as a conversation
   const loadConversation = function () {
     axios
       .get("/api/offerlist/conversation")
       .then((result) => {
-        console.log(result.data);
         setConversations(result.data);
       })
       .catch((error) => {
         console.log(error);
       });
   };
-
+  
   useEffect(() => {
     loadConversation();
   }, []);
 
+  console.log("conversation selected=>",selectedId)
+
+  //passes props
   const conversation = conversations.map((conversation) => {
     return (
-      <Conversation key = {conversation.id} img={conversation.image_url} name={conversation.name} />
+      <Conversation
+        key={conversation.id}
+        offerId={conversation.offerid}
+        selectedId={selectedId}
+        setSelectedId={setSelectedId}
+        wanted_item_id={conversation.listing_offer_made_to_id}
+        offered_item_id={conversation.listing_being_offered_id}
+      />
     );
   });
 
@@ -35,7 +46,7 @@ export default function Mymessages() {
       <div className="chat-menu">
         <div className="chat-menu-wrapper">
           <input placeholder="SEARCH" className="chat-menu-input"></input>
-         {conversation}
+          {conversation}
         </div>
       </div>
       <div className="chat-box">
