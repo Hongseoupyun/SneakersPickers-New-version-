@@ -20,6 +20,7 @@ export default function MyOffers(props) {
         wantedID: props.wanted_item_id,
       })
       .then((result) => {
+        console.log(result.data);
         setEachOffer(result.data);
       });
   };
