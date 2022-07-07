@@ -7,25 +7,43 @@ import axios from "axios";
 
 export default function Mymessages() {
   const [conversations, setConversations] = useState([]);
-  const [selectedId, setSelectedId] = useState("")
-  
+  const [selectedId, setSelectedId] = useState("");
+  const [text, setText] = useState("");
+
   //loads accepted offers as a conversation
-  const loadConversation = function () {
-    axios
-      .get("/api/offerlist/conversation")
-      .then((result) => {
-        setConversations(result.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  const loadConversation = async function () {
+    try {
+      const result = await axios.get("/api/offerlist/conversation");
+      setConversations(result.data);
+      console.log(result.data);
+      setSelectedId(result.data[0].offerid);
+    } catch (error) {
+      console.log(error);
+    }
   };
-  
+  console.log("conversation selected=>", selectedId);
+
+  const loadMessages = async function () {
+    try {
+      const result = await axios.get("/api/messages",{selectedId});
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const submitText = function () {
+    return axios.post("api/messages", { text ,selectedId });
+  };
+
   useEffect(() => {
     loadConversation();
+    loadMessages()
   }, []);
 
-  console.log("conversation selected=>",selectedId)
+  useEffect(()=>{
+    loadMessages();
+  },[selectedId])
 
   //passes props
   const conversation = conversations.map((conversation) => {
@@ -64,8 +82,10 @@ export default function Mymessages() {
             <textarea
               className="chat-message-input"
               placeholder="Type a message"
+              value={text}
+              onChange={(e) => setText(e.target.value)}
             ></textarea>
-            <button className="chat-submit-button">
+            <button className="chat-submit-button" onClick={submitText}>
               <GrSend className="submit-icon" />
             </button>
           </div>

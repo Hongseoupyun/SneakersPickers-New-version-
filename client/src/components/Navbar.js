@@ -5,7 +5,6 @@ import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import "./Navbar.css";
 import axios from "axios";
 import { MdNotificationsActive } from "react-icons/md";
-import {AiFillMessage} from "react-icons/ai"
 
 function NavBar() {
   //renders navbar based on localstoragestate
@@ -48,7 +47,6 @@ function NavBar() {
     loadMyListings();
   }, []);
   console.log("userloggedin =>", name);
-
   return (
     <Navbar
       className="nav-bar"

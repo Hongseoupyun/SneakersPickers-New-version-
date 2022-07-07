@@ -14,7 +14,6 @@ export default function Conversation(props) {
         wantedID: wanted_item_id,
       })
       .then((result) => {
-        console.log(result.data);
         setEachConversation(result.data);
       });
   };

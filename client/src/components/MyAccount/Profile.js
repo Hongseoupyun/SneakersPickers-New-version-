@@ -26,7 +26,7 @@ export default function Profile() {
  //sending updated dato to api
   const saveChanges = function (e) {
     e.preventDefault();
-    axios.post("api/profile", { user_name, email, currentPassword, newPassword, confirmedPassword })
+    return axios.post("api/profile", { user_name, email, currentPassword, newPassword, confirmedPassword })
       .then((res) => {
         console.log(res.data)
         setnewPassword("")
