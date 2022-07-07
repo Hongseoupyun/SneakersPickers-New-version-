@@ -9,11 +9,11 @@ export default function Mymessages() {
   const [conversations, setConversations] = useState([]);
   const [selectedId, setSelectedId] = useState("")
   
+  //loads accepted offers as a conversation
   const loadConversation = function () {
     axios
       .get("/api/offerlist/conversation")
       .then((result) => {
-        console.log(result.data);
         setConversations(result.data);
       })
       .catch((error) => {
@@ -27,6 +27,7 @@ export default function Mymessages() {
 
   console.log("conversation selected=>",selectedId)
 
+  //passes props
   const conversation = conversations.map((conversation) => {
     return (
       <Conversation
@@ -39,8 +40,6 @@ export default function Mymessages() {
       />
     );
   });
-
-
 
   return (
     <div className="mymessages-body">

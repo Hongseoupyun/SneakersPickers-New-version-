@@ -6,6 +6,7 @@ export default function Conversation(props) {
   const { offerId, setSelectedId, wanted_item_id, offered_item_id } = props;
   const [eachConversation, setEachConversation] = useState([]);
 
+ //loads sellers'shoes info from accepted offers
   const loadEachConversation = function () {
     return axios
       .post("/api/myofferedproducts", {
@@ -13,6 +14,7 @@ export default function Conversation(props) {
         wantedID: wanted_item_id,
       })
       .then((result) => {
+        console.log(result.data);
         setEachConversation(result.data);
       });
   };
@@ -28,6 +30,7 @@ export default function Conversation(props) {
         onClick={() => {
           setSelectedId(offerId);
         }}
+        key={e.id}
       >
         <img
           className="conversation-img"
