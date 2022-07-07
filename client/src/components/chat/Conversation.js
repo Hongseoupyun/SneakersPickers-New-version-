@@ -2,8 +2,6 @@ import React from "react";
 import "./Conversation.scss"
 import testimg from "../images/aboutus-img3.jpeg"
 
-
-
 export default function Conversation() {
   return (
     <div className="conversation">
