@@ -4,7 +4,6 @@ import axios from "axios";
 import MyOffers from "./MyOffers";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 //Component path: Offer > MyOffers > OfferedItem
 export default function Offers() {
   const [allMyOffers, setAllMyOffers] = useState([]);
