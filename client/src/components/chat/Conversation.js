@@ -17,7 +17,7 @@ export default function Conversation(props) {
         setEachConversation(result.data);
       });
   };
-
+  
   useEffect(() => {
     loadEachConversation();
   }, []);
