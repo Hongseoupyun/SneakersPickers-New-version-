@@ -1,5 +1,4 @@
 const router = require("express").Router();
-
 const queryListings = `
 SELECT * FROM listings 
 JOIN users ON users.id=user_id 

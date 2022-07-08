@@ -13,7 +13,6 @@ import tradeImg from "../images/trade.png";
 
 function Placeoffer() {
   const { id } = useParams();
-
   const [offeredID, setOfferedID] = useState(null);
   const [listing, setListing] = useState([]);
   const [myListings, setMyListings] = useState([]);
@@ -142,5 +141,4 @@ function Placeoffer() {
     </div>
   );
 }
-
 export default Placeoffer;
