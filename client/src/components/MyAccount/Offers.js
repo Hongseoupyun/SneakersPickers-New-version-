@@ -12,7 +12,7 @@ export default function Offers() {
 
   //Axios GET the user's listings that has an offer
   const loadMyOffers = function () {
-    axios.get("/api/offerlist").then((result) => {
+    return axios.get("/api/offerlist").then((result) => {
       if (result.data.length === 0) {
         setWarning(true);
         setAllMyOffers(result.data);

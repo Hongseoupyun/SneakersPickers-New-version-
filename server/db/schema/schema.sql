@@ -31,8 +31,8 @@ CREATE TABLE offers (
 
  CREATE TABLE messages (
    id SERIAL PRIMARY KEY NOT NULL,
-   offer_id INTEGER REFERENCES offers(id) ON DELETE CASCADE,
+   offer_id INTEGER REFERENCES offers(offerid) ON DELETE CASCADE,
    sender_id INTEGER,
    text VARCHAR(255),
-   time TIMESTAMP NOT NULL DEFAULT current_timestam p
+   time TIMESTAMP NOT NULL DEFAULT current_timestamp
  );
