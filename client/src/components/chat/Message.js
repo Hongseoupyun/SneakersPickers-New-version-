@@ -1,8 +1,6 @@
 import React from "react";
 import "./Message.scss";
 import testimg from "../images/aboutus-img3.jpeg";
-import axios from "axios";
-
 export default function Message({ own }) {
 
 
