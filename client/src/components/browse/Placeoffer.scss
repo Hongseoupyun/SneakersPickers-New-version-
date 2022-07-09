@@ -51,7 +51,7 @@
 .placeoffer-texts {
   position: relative;
   left: 5%;
-  top: 4%;
+  top: 1%;
   font-size: 1.6rem;
 }
 .placeoffer-name {
@@ -116,10 +116,10 @@ button .login-button {
   }
 }
 .shoes-selected {
-  transform: scale(1.073);
+  transform: scale(1.051);
   transition: 0.3s;
   &:hover {
-    transform: scale(1.073);
+    transform: scale(1.051);
     transition: 0.3s;
   }
 }
@@ -211,5 +211,11 @@ button .login-button {
   to {
     top: 0px;
     opacity: 1;
+  }
+}
+.myItem-container{
+  scrollbar-width: none;
+  &::-webkit-scrollbar{
+    display: none;
   }
 }

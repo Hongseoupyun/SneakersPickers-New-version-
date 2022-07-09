@@ -132,7 +132,7 @@ function Placeoffer() {
               </a>
             </div>
 
-            <div>{myListed}</div>
+            <div className="myItem-container">{myListed}</div>
           </article>
         </>
       ) : (
