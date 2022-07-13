@@ -85,9 +85,9 @@ function NavBar() {
               <NavDropdown.Item href="/mylistings">
                 My listings
               </NavDropdown.Item>
-              <NavDropdown.Item href="/mymessages">
+              {/* <NavDropdown.Item href="/mymessages">
                 My messages
-              </NavDropdown.Item>
+              </NavDropdown.Item> */}
               <NavDropdown.Item href="/addalisting">
                 Add a listing
               </NavDropdown.Item>
