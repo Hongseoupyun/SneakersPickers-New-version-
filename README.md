@@ -10,9 +10,22 @@ They can now stop reselling shoes but can trade instead..!
 ## Users Story
 
 ### Landing Page
--Enables users to signup with the signup buttom.
+- Enables users to signup with the signup buttom.
+
+!["Landing Page"](https://github.com/Hongseoupyun/SneakersPickers-New-version-/blob/main/docs/LandingPage.png?raw=true)
+
 ### About us Page
+- Explains about the services that app provides
+
+!["About us"](https://github.com/Hongseoupyun/SneakersPickers-New-version-/blob/main/docs/AboutUsPage.png?raw=true)
+
 ### Contact Us Page
+
+- Provides contact informations
+
+!["Contact us"](https://github.com/Hongseoupyun/SneakersPickers-New-version-/blob/main/docs/ContactUsPage.png?raw=true)
+
+
 ### Browse
 ### Register
 ### Login
