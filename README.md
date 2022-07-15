@@ -46,6 +46,16 @@ They can now stop reselling shoes but can trade instead..!
 
 !["Login"](https://github.com/Hongseoupyun/SneakersPickers-New-version-/blob/main/docs/Login.png?raw=true)
 
+### Profile
+
+- Users can change their informations(passwords, name and email).
+
+### Add A Listing
+
+- Enables users to upload shoes to trade.
+
+
+
 ### Make A Offer
 
 - Enables users to select shoes to trade and make a offer.
@@ -55,9 +65,11 @@ They can now stop reselling shoes but can trade instead..!
 ### Offer Notification
 
 - When users get offers from other users, they will see notification in the Navbar.
+- When users click the bell notification, app redirects users to My Offer page, Users can also see the notification in MyListing page.
 
 !["Notification"](https://github.com/Hongseoupyun/SneakersPickers-New-version-/blob/main/docs/OfferNotification.png?raw=true)
 
+!["My Listing"]()
 ### Accepting Offer
 
 - Users can accept or decline the offers upon their preferences.
