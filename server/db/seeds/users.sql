@@ -17,7 +17,7 @@ VALUES
 
   (3,'nike dunk green','Never Worn..!', 'Nike Dunks',6, 'https://i.pinimg.com/564x/65/87/29/65872907e4b931db2cb6eeee4b9d8f4a.jpg' , 'Any Vans', TRUE),
 
-  (4,'nike dunk green','Good Conditions', 'Air Jordan',6, 'https://i.pinimg.com/564x/92/3e/48/923e486bc2f913e8d8d06758a3a51dc8.jpg' , 'Jordans', TRUE);
+  (4,'Air force 1','Good Conditions', 'Air Jordan',6, 'https://i.pinimg.com/564x/92/3e/48/923e486bc2f913e8d8d06758a3a51dc8.jpg' , 'Jordans', TRUE);
 
   
 
