@@ -5,8 +5,7 @@ VALUES
   ('Nhan Tran','nhan@nhan.com','nhan'),
   ('Hongseoup Yun','hongseoup@hongseoup.com','hongseoup'),
   ('Junhwan Im','jun@jun.com','junhwan'),
-  ('Harper Myers','erat.eget@yahoo.edu','Cnz7'),
-  ('Yara Frank','sem@hotmail.edu','Hlz2');
+  ('Harper Myers','erat.eget@yahoo.edu','Cnz7');
 
 
 INSERT INTO listings (user_id, name, description, brand, size, image_url, preference, active)
