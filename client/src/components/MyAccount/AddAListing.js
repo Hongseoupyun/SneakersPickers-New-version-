@@ -70,7 +70,7 @@ function AddAListing() {
                 name="size"
                 className="size"
                 onChange={(e) => {
-                  setState({ ...state, size: e.target.value });
+                  ({ ...state, size: e.target.value });
                 }}
               >
                 <option value="4">Size 4</option>
