@@ -1,6 +1,6 @@
 # SneakersPickers
 
-This project is developed by <a href="https://github.com/Hongseoupyun">Hongseoup Yun</a> and <a>Nhan Tran</a>
+This project is developed by <a href="https://github.com/Hongseoupyun">Hongseoup Yun</a> and <a href="https://github.com/nktrancs">Nhan Tran</a>
 
 Live demo :https://sneakerspickers.herokuapp.com/
 
