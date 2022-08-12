@@ -1,5 +1,7 @@
 # SneakersPickers
 
+This project is developed by Hongseoup Yun and Nhan Tran
+
 Live demo :https://sneakerspickers.herokuapp.com/
 
 SnekersPickers is a trading platform app that users can trade their shoes.
