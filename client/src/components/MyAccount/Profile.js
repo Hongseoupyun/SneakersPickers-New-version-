@@ -11,12 +11,20 @@ export default function Profile() {
   const [confirmedPassword, setconfirmedPassword] = useState("")
 
   //fetch data from api using axios
-  const getUsersProfile = function () {
-    return axios.get("api/profile")
-      .then((result) => {
-        setName(result.data.user_name)
-        setEmail(result.data.email)
-      });
+  const getUsersProfile = async function () {
+    try {
+      const result = await axios.get("api/profile")
+      setName(result.data.user_name)
+      setEmail(result.data.email)
+    }
+    catch(err) {
+      console.log(err)
+    }
+    // return axios.get("api/profile")
+    //   .then((result) => {
+    //     setName(result.data.user_name)
+    //     setEmail(result.data.email)
+    //   });
   };
   //load usersProfile when rendering component
   useEffect(() => {
