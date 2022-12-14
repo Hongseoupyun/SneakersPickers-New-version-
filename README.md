@@ -4,11 +4,11 @@ This project is developed by <a href="https://github.com/Hongseoupyun">Hongseoup
 
 Live demo :https://sneakerspickers.herokuapp.com/
 
-SnekersPickers is a trading platform app where users can trade their shoes.
+SneakersPickers is a trading platform app where users can trade their shoes.
 
 The Sneakers scence has grown so big, and many people constantly resell their old sneakers to buy other sneakers.
 
-The sneakersPickers may help those people reduce the process of reselling their sneakers and buying other sneakers. They can now stop reselling shoes but can trade instead..!
+The SneakersPickers may help those people reduce the process of reselling their sneakers and buying other sneakers. They can now stop reselling shoes but can trade instead..!
 
 
 
